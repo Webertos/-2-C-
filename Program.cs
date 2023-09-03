@@ -1,46 +1,45 @@
-﻿/*int randomNumber = new Random().Next(10, 100);
-int num1 = randomNumber % 10;
-int num2 = randomNumber / 10;
-System.Console.WriteLine("randomNumber");
-System.Console.WriteLine (num1 > num2 ? num1 : num2);
- */
+﻿/*
+int Exponentiation(int num1, int num2)
+{
+  int result = 1;
+  for(int i=1; i <= num2; i++){
+    result = result * num1;
+  }
+    return result;
+}
+  int num1 = int.Parse(Console.ReadLine());
+  int num2 = int.Parse(Console.ReadLine());
+
+  int exponentiation = Exponentiation(num1, num2);
+  Console.WriteLine(exponentiation);
+*/
+
 
 
 /*
-int num1 = int.Parse(Console.ReadLine());
-int Length = num1.ToString().Length;
-if (Length == 3) 
-{
-	int result = ( num1/10 ) % 10;
-	Console.WriteLine($"Вторая цифра {result}");
-} 
- */   
+int num = int.Parse(Console.ReadLine());
 
+  int Sum(int num){
+    
+    int counter = Convert.ToString(num).Length;
+    int advance = 0;
+    int result = 0;
 
-/*int Day = int.Parse(Console.ReadLine());
-if (Day >= 1 && Day <=7) 
-{
-	if (Day >= 6) 
-    {
-		Console.WriteLine("Выходной");
-	} 
-    else {
-		Console.WriteLine("Рабочий день");
-	}
-} 
+    for (int i = 0; i < counter; i++){
+      advance = num - num % 10;
+      result = result + (num - advance);
+      num = num / 10;
+    }
+   return result;
+  }
+
+int sum1 = Sum(num);
+Console.WriteLine(sum1);
 */
 
-/*int num1 = int.Parse(Console.ReadLine());
-int Length2 = num1.ToString().Length;
-if (Length2 >= 3) 
-{
-	while (num1 > 999)
-	{
-		num1 = num1 / 10;
-	}
-	int result = num1 % 10;
-	Console.WriteLine($"третья цифра {result}");
-} else {
-	Console.WriteLine("Нет такой цыфры");
-}
-*/
+
+Console.WriteLine($"\nЗадача 29. Ряд чисел преобразует в массив");
+Console.Write("Введите ряд чисел, разделенных запятой : ");
+string? seriesOfNumbers = Console.ReadLine();
+
+seriesOfNumbers = seriesOfNumbers + ",";  
