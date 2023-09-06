@@ -1,45 +1,35 @@
 ﻿/*
-int Exponentiation(int num1, int num2)
+Console.Write("Введите элементы(через пробел): ");
+int[] arr = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+int count = 0;
+ 
+for (int i = 0; i < arr.Length; i++)
 {
-  int result = 1;
-  for(int i=1; i <= num2; i++){
-    result = result * num1;
-  }
-    return result;
+    if (arr[i] > 0)
+    {
+        count++;
+    }
 }
-  int num1 = int.Parse(Console.ReadLine());
-  int num2 = int.Parse(Console.ReadLine());
-
-  int exponentiation = Exponentiation(num1, num2);
-  Console.WriteLine(exponentiation);
+ 
+Console.WriteLine($"Кол-во элементов > 0: {count}");
 */
-
 
 
 /*
-int num = int.Parse(Console.ReadLine());
-
-  int Sum(int num){
-    
-    int counter = Convert.ToString(num).Length;
-    int advance = 0;
-    int result = 0;
-
-    for (int i = 0; i < counter; i++){
-      advance = num - num % 10;
-      result = result + (num - advance);
-      num = num / 10;
-    }
-   return result;
-  }
-
-int sum1 = Sum(num);
-Console.WriteLine(sum1);
+Console.Write("Введите b1: ");
+var b1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите k1: ");
+var k1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите b2: ");
+var b2 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите k2: ");
+var k2 = Convert.ToDouble(Console.ReadLine());
+ 
+var x = -(b1 - b2) / (k1 - k2);
+var y = k1 * x + b1;
+ 
+x = Math.Round(x, 3);
+y = Math.Round(y, 3);
+ 
+Console.WriteLine($"Пересечение в точке: ({x};{y})");
 */
-
-
-Console.WriteLine($"\nЗадача 29. Ряд чисел преобразует в массив");
-Console.Write("Введите ряд чисел, разделенных запятой : ");
-string? seriesOfNumbers = Console.ReadLine();
-
-seriesOfNumbers = seriesOfNumbers + ",";  
