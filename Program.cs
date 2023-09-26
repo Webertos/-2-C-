@@ -1,308 +1,75 @@
-﻿
-/*
-int m = InputNumbers("Enter m: ");
-int n = InputNumbers("Enter n: ");
-int range = InputNumbers("Enter range: from 1 before ");
+﻿/*
+int number = Convert.ToInt32(Console.ReadLine());
+int count = 1;
+NaturalToLow(number, count);
 
-int[,] array = new int[m, n];
-CreateArray(array);
-WriteArray(array);
 
-int minSumLine = 0;
-int sumLine = SumLineElements(array, 0);
-for (int i = 1; i < array.GetLength(0); i++)
+void NaturalToLow(int n, int count)
 {
-  int tempSumLine = SumLineElements(array, i);
-  if (sumLine > tempSumLine)
-  {
-    sumLine = tempSumLine;
-    minSumLine = i;
-  }
-}
-
-Console.WriteLine($"\n{minSumLine+1} - smallest sum ({sumLine}) elements ");
-
-
-int SumLineElements(int[,] array, int i)
-{
-  int sumLine = array[i,0];
-  for (int j = 1; j < array.GetLength(1); j++)
-  {
-    sumLine += array[i,j];
-  }
-  return sumLine;
-}
-
-int InputNumbers(string input)
-{
-  Console.Write(input);
-  int output = Convert.ToInt32(Console.ReadLine());
-  return output;
-}
-
-void CreateArray(int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
+    if (count > n)
     {
-      array[i, j] = new Random().Next(range);
+        return;
     }
-  }
-}
-
-void WriteArray (int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
+    else
     {
-      Console.Write(array[i,j] + " ");
+        NaturalToLow(n, count + 1);
+        Console.Write(count + " ");
     }
-    Console.WriteLine();
-  }
-}
-*/
-
-/*int m = InputNumbers("m: ");
-int n = InputNumbers("n: ");
-int range = InputNumbers("Enter range: from 1 before ");
-
-int[,] array = new int[m, n];
-CreateArray(array);
-WriteArray(array);
-
-Console.WriteLine($"sorted array: ");
-OrderArrayLines(array);
-WriteArray(array);
-
-void OrderArrayLines(int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-      for (int k = 0; k < array.GetLength(1) - 1; k++)
-      {
-        if (array[i, k] < array[i, k + 1])
-        {
-          int temp = array[i, k + 1];
-          array[i, k + 1] = array[i, k];
-          array[i, k] = temp;
-        }
-      }
-    }
-  }
-}
-
-int InputNumbers(string input)
-{
-  Console.Write(input);
-  int output = Convert.ToInt32(Console.ReadLine());
-  return output;
-}
-
-void CreateArray(int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-      array[i, j] = new Random().Next(range);
-    }
-  }
-}
-
-void WriteArray(int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-      Console.Write(array[i, j] + " ");
-    }
-    Console.WriteLine();
-  }
-}
-
-*/
-
-/*
-int m = InputNumbers("Number of lines first matrix: ");
-int n = InputNumbers("Number oof columns first matrix (and lines second matrix): ");
-int p = InputNumbers("Columns second matrix: ");
-int range = InputNumbers("Enter range from 1 before: ");
-
-int[,] firstMartrix = new int[m, n];
-CreateArray(firstMartrix);
-Console.WriteLine($"\nFirst matrix:");
-WriteArray(firstMartrix);
-
-int[,] secomdMartrix = new int[n, p];
-CreateArray(secomdMartrix);
-Console.WriteLine($"\nSecond matrix:");
-WriteArray(secomdMartrix);
-
-int[,] resultMatrix = new int[m,p];
-
-MultiplyMatrix(firstMartrix, secomdMartrix, resultMatrix);
-Console.WriteLine($"\nПроизведение первой и второй матриц:");
-WriteArray(resultMatrix);
-
-void MultiplyMatrix(int[,] firstMartrix, int[,] secomdMartrix, int[,] resultMatrix)
-{
-  for (int i = 0; i < resultMatrix.GetLength(0); i++)
-  {
-    for (int j = 0; j < resultMatrix.GetLength(1); j++)
-    {
-      int sum = 0;
-      for (int k = 0; k < firstMartrix.GetLength(1); k++)
-      {
-        sum += firstMartrix[i,k] * secomdMartrix[k,j];
-      }
-      resultMatrix[i,j] = sum;
-    }
-  }
-}
-
-int InputNumbers(string input)
-{
-  Console.Write(input);
-  int output = Convert.ToInt32(Console.ReadLine());
-  return output;
-}
-
-void CreateArray(int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-      array[i, j] = new Random().Next(range);
-    }
-  }
-}
-
-void WriteArray (int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-      Console.Write(array[i,j] + " ");
-    }
-    Console.WriteLine();
-  }
-}
-
-*/
-/*
-int x = InputNumbers("Enter X: ");
-int y = InputNumbers("Enter Y: ");
-int z = InputNumbers("Enter Z: ");
-Console.WriteLine($"");
-
-int[,,] array3D = new int[x, y, z];
-CreateArray(array3D);
-WriteArray(array3D);
-
-int InputNumbers(string input)
-{
-  Console.Write(input);
-  int output = Convert.ToInt32(Console.ReadLine());
-  return output;
-}
-
-void WriteArray (int[,,] array3D)
-{
-  for (int i = 0; i < array3D.GetLength(0); i++)
-  {
-    for (int j = 0; j < array3D.GetLength(1); j++)
-    {
-      Console.Write($"X({i}) Y({j}) ");
-      for (int k = 0; k < array3D.GetLength(2); k++)
-      {
-        Console.Write( $"Z({k})={array3D[i,j,k]}; ");
-      }
-      Console.WriteLine();
-    }
-    Console.WriteLine();
-  }
-}
-
-void CreateArray(int[,,] array3D)
-{
-  int[] temp = new int[array3D.GetLength(0) * array3D.GetLength(1) * array3D.GetLength(2)];
-  int  number;
-  for (int i = 0; i < temp.GetLength(0); i++)
-  {
-    temp[i] = new Random().Next(10, 100);
-    number = temp[i];
-    if (i >= 1)
-    {
-      for (int j = 0; j < i; j++)
-      {
-        while (temp[i] == temp[j])
-        {
-          temp[i] = new Random().Next(10, 100);
-          j = 0;
-          number = temp[i];
-        }
-          number = temp[i];
-      }
-    }
-  }
-  int count = 0; 
-  for (int x = 0; x < array3D.GetLength(0); x++)
-  {
-    for (int y = 0; y < array3D.GetLength(1); y++)
-    {
-      for (int z = 0; z < array3D.GetLength(2); z++)
-      {
-        array3D[x, y, z] = temp[count];
-        count++;
-      }
-    }
-  }
 }
 */
 
 /*
-int n = 4;
-int[,] sqareMatrix = new int[n, n];
+int m = Convert.ToInt32(Console.ReadLine());
 
-int temp = 1;
-int i = 0;
-int j = 0;
+int n = Convert.ToInt32(Console.ReadLine());
 
-while (temp <= sqareMatrix.GetLength(0) * sqareMatrix.GetLength(1))
+SumFromMToN(m, n);
+
+void SumFromMToN(int m, int n)
 {
-  sqareMatrix[i, j] = temp;
-  temp++;
-  if (i <= j + 1 && i + j < sqareMatrix.GetLength(1) - 1)
-    j++;
-  else if (i < j && i + j >= sqareMatrix.GetLength(0) - 1)
-    i++;
-  else if (i >= j && i + j > sqareMatrix.GetLength(1) - 1)
-    j--;
-  else
-    i--;
+    Console.Write(SumMN(m - 1, n));
 }
 
-WriteArray(sqareMatrix);
-
-void WriteArray (int[,] array)
+int SumMN(int m, int n)
 {
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
+    int res = m;
+    if (m == n)
+        return 0;
+    else
     {
-      if (array[i,j] / 10 <= 0)
-      Console.Write($" {array[i,j]} ");
-
-      else Console.Write($"{array[i,j]} ");
+        m++;
+        res = m + SumMN(m, n);
+        return res;
     }
-    Console.WriteLine();
-  }
+}
+*/
+
+/*
+int m = Convert.ToInt32(Console.ReadLine());
+
+int n = Convert.ToInt32(Console.ReadLine());
+
+AkkermanFunction(m,n);
+
+
+void AkkermanFunction(int m, int n)
+{
+    Console.Write(Akkerman(m, n)); 
+}
+
+int Akkerman(int m, int n)
+{
+    if (m == 0)
+    {
+        return n + 1;
+    }
+    else if (n == 0 && m > 0)
+    {
+        return Akkerman(m - 1, 1);
+    }
+    else
+    {
+        return (Akkerman(m - 1, Akkerman(m, n - 1)));
+    }
 }
 */
